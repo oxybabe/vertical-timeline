@@ -1,0 +1,44 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  background-color: lightblue;
+}
+.timeline {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  height: 95vh;
+  border-left: 6px solid rgb(103, 100, 104);
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
+}
+
+.timeline-card {
+  border: 1px solid black;
+  height: 200px;
+  width: 30%;
+  background-color: ghostwhite;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.timeline-card:nth-child(even) {
+  float: right;
+}
+.i {
+  
+}
