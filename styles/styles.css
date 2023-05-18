@@ -8,11 +8,15 @@ html {
 }
 body {
   background-color: lightblue;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 img {
   width: 100%;
+  
+  /* float: inline-start; */
 }
+
 .timeline {
   position: relative;
   width: 80%;
@@ -23,46 +27,96 @@ img {
 .timeline::after {
   content: "";
   position: absolute;
-  height: 95vh;
-  border-left: 6px solid navy;
+  height: 98%;
+  border-left: 6px solid rgb(5, 5, 66);
   left: 50%;
-  margin-left: -3px;
+  /* margin-left: -3px; */
   top: 0;
 }
 
 .timeline-card {
-  border: 1px solid black;
+  position: relative;
+  border: 1px solid white;
   height: 200px;
-  width: 30%;
+  width: 40%;
   background-color: ghostwhite;
   content: "";
   clear: both;
   display: table;
+  margin-bottom: -15%;
+  padding: 10px 30px;
+}
+
+.timeline-card::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 0px;
+  border-color: transparent transparent transparent white;
+  
 }
 
 .timeline-card:nth-child(even) {
   float: right;
 }
-.button {
-  transition-duration: 0.4s;
+ h1 {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font: 24px bolder; 
+  font-weight: bold;
 }
 
-.button:hover {
+.timeline-card h2 {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  font: 24px;
+  font-weight: bold;
+  color: white;
+  
+
+}
+h3 {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font: 24px bolder;
+  font-weight: bold;
+
+}
+.timeline-card button {
+  /* position: absolute; */
+  transition-duration: 0.4s;
+  object-position: right 75%;
+  bottom: 15px;
+  left: 15px;
+  border-radius: 3px;
+  background-color: navy;
+  font-size: 16px;
+  color: white;
+      
+}
+
+.timeline-card button:hover {
   background-color: #a46335;
   color: white;
 }
-
-i {
+.timeline-card  i {
   position: relative;
- height: 100px;
- margin: 0 5px;
-   left: 47%;
-  width: 80%;
-  clear: both;
-  display: table;
-  z-index: 90;
+  z-index: 10;
+  font-size: 30px;
+  background-color: white;
+  left: 100%;
+}
 
- 
-
-
+@media screen and (max-width: 768px) {
+  .timeline::after {
+    left: 30px;
+  }
 }
