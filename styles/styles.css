@@ -13,8 +13,11 @@ body {
 
 img {
   width: 100%;
+  position: relative;
+  background-attachment: fixed;
+  background-size: 100% 100%;
   
-  /* float: inline-start; */
+  
 }
 
 .timeline {
@@ -79,6 +82,7 @@ img {
   font: 24px;
   font-weight: bold;
   color: white;
+  z-index: 5;
   
 
 }
@@ -102,16 +106,28 @@ h3 {
   color: white;
       
 }
+.date {
+  background-color: rgb(180, 74, 35);
+  position: absolute;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  color: aliceblue;
+  top: 0px;
+  right: 0px;
+  padding: 8px;
+}
 
 .timeline-card button:hover {
   background-color: #a46335;
   color: white;
 }
 .timeline-card  i {
+ 
   position: relative;
   z-index: 10;
   font-size: 30px;
   background-color: white;
+  display: inline-block;
   left: 100%;
 }
 
