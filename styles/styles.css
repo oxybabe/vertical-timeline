@@ -8,7 +8,7 @@ html {
 }
 body {
   background-color: lightblue;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 img {
@@ -16,8 +16,7 @@ img {
   position: relative;
   background-attachment: fixed;
   background-size: 100% 100%;
-  
-  
+  /* width: 0; */
 }
 
 .timeline {
@@ -25,29 +24,30 @@ img {
   width: 80%;
   margin: 0 auto;
   margin-top: 2%;
+  min-height: 100vh;
 }
 
 .timeline::after {
   content: "";
   position: absolute;
-  height: 98%;
+  /* height: 98%; */
   border-left: 6px solid rgb(5, 5, 66);
   left: 50%;
-  /* margin-left: -3px; */
   top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
 }
 
 .timeline-card {
   position: relative;
-  border: 1px solid white;
-  height: 200px;
-  width: 40%;
-  background-color: ghostwhite;
   content: "";
   clear: both;
   display: table;
   margin-bottom: -15%;
-  padding: 10px 30px;
+  width: 100%;
+  /* padding: 10px 30px; */
+  
+
 }
 
 .timeline-card::before {
@@ -61,17 +61,32 @@ img {
   border: medium solid white;
   border-width: 10px 0 10px 0px;
   border-color: transparent transparent transparent white;
-  
 }
 
 .timeline-card:nth-child(even) {
   float: right;
 }
- h1 {
+
+.timeline-card:nth-child(odd) {
+  clear: right;
+  left: 30px;
+  
+  /* animation-duration: 3s;
+  animation-name: slidein; */
+}
+.card {
+  border: 1px solid white;
+  height: 200px;
+  width: 40%;
+  background-color: ghostwhite;
+}
+
+
+h1 {
   position: absolute;
   top: 8px;
   left: 16px;
-  font: 24px bolder; 
+  font: 24px bolder;
   font-weight: bold;
 }
 
@@ -83,8 +98,6 @@ img {
   font-weight: bold;
   color: white;
   z-index: 5;
-  
-
 }
 h3 {
   position: absolute;
@@ -92,7 +105,6 @@ h3 {
   left: 16px;
   font: 24px bolder;
   font-weight: bold;
-
 }
 .timeline-card button {
   /* position: absolute; */
@@ -104,12 +116,16 @@ h3 {
   background-color: navy;
   font-size: 16px;
   color: white;
-      
+}
+
+.timeline-card button:hover {
+  background-color: #a46335;
+  color: white;
 }
 .date {
   background-color: rgb(180, 74, 35);
   position: absolute;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   color: aliceblue;
   top: 0px;
@@ -117,22 +133,42 @@ h3 {
   padding: 8px;
 }
 
-.timeline-card button:hover {
-  background-color: #a46335;
-  color: white;
-}
-.timeline-card  i {
- 
+.timeline i {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   font-size: 30px;
   background-color: white;
-  display: inline-block;
-  left: 100%;
+ left: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .timeline::after {
-    left: 30px;
+    left: 0px;
+  }
+  .timeline-card:nth-child(even) {
+    float: initial;
+  }
+  .timeline-event {
+    width: 80%;
   }
 }
+
+/* animation notes: 
+@keyframes slideinleft {
+  from {
+    transform: translateX(-100%)
+
+  }
+  to {
+transform: translateX(0);
+  }
+}
+
+@keyframes slideinright {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+} */
